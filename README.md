@@ -1,12 +1,14 @@
 # Gist Proxy Server
 
-## Usage
+## Command line
 
 ```
-$> GIST_PROXY_SERVER_USERNAME=arcanis
-$> GIST_PROXY_SERVER_PASSWORD=githubauthtoken
-$> gist-proxy-server
+$> gist-proxy-server --username <username> --password <password> --port <port (default 80)>
 ```
+
+You can also set your credentials using the `GIST_PROXY_SERVER_USERNAME` and `GIST_PROXY_SERVER_PASSWORD` environment variables.
+
+Note that your password may (and probably *should*, security-wise) be a Github access token, configured with the `gist` permission.
 
 ## Why?
 
@@ -23,14 +25,24 @@ Thanks to this permission model:
   - Your gists won't be shared unless you explicitely say so
   - The files from your gist won't be editable unless you explicitely say so
 
+## Usage
+
+### `GET /:uid/:file`
+
+Returns the content of the specified file, from the specified gist.
+
+### `PUT /:uid/:file`
+
+Sets the content of the specified file, from the specified gist.
+
 ## License
 
-**The MIT License (MIT)**
-
-Copyright © 2015 Maël Nison
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+> **The MIT License (MIT)**
+>
+> Copyright © 2015 Maël Nison
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
