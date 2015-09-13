@@ -134,10 +134,12 @@ app.put( '/:uid/:file', ( req, res ) => {
 
         res.send( error.message );
 
-        console.log( error.stack );
-
     } );
 
 } );
 
-app.listen( 3000 );
+let server = app.listen( port, ( ) => {
+
+    console.log( `Now listening on port ${server.address().port}` );
+
+} );

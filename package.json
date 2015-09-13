@@ -1,7 +1,7 @@
 {
   "name": "gist-proxy-server",
   "description": "Make your gists editable by the internet if you want to",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "bin": {
     "gist-proxy-server": "./binaries/gist-proxy-server"
   },
