@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-require( 'babel/register' );
+require( 'babel/register' )( { only : [ require( 'path' ).resolve( __dirname + '/../sources' ) ] } );
 require( '../sources/gist-proxy-server' );
