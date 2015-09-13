@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+require( 'babel/register' );
+require( '../sources/gist-proxy-server' );
